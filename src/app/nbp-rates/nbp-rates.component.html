@@ -1,0 +1,23 @@
+<h1>NBP RATES FROM API</h1>
+
+<table mat-table [dataSource]="nbpRates" class="mat-elevation-z8">
+
+  <ng-container matColumnDef="currency">
+    <th mat-header-cell *matHeaderCellDef> Currency</th>
+    <td mat-cell *matCellDef="let element"> {{ element.currency }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="code">
+    <th mat-header-cell *matHeaderCellDef> Code</th>
+    <td mat-cell *matCellDef="let element"> {{ element.code }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="mid">
+    <th mat-header-cell *matHeaderCellDef> Value</th>
+    <td mat-cell *matCellDef="let element"> {{ element.mid }}</td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
